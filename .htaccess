@@ -1,0 +1,13 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect to .php
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+#Redirect /home to index.php
+RewriteRule ^home index.php [NC,L]
+
+RewriteRule ^quotations/([0-9a-zA-Z_-]+) view-quotation.php?ref=$1 [L]
+RewriteRule ^download-quotation/([0-9a-zA-Z_-]+) download-quotation.php?ref=$1 [L]
+
